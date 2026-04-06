@@ -83,7 +83,11 @@ function AgentVoicePill({
       const courseLanguage =
         (typeof localStorage !== 'undefined' && localStorage.getItem('generationLanguage')) ||
         'zh-CN';
-      const previewText = courseLanguage === 'en-US' ? 'Welcome to AI Classroom' : '欢迎来到AI课堂';
+      const previewText =
+        courseLanguage === 'en-US' ? 'Welcome to AI Classroom'
+        : courseLanguage === 'ja-JP' ? 'AIクラスルームへようこそ'
+        : courseLanguage === 'ru-RU' ? 'Добро пожаловать в AI-класс'
+        : '欢迎来到AI课堂';
 
       if (providerId === 'browser-native-tts') {
         const { promise, cancel } = playBrowserTTSPreview({ text: previewText, voice: voiceId });
@@ -308,7 +312,11 @@ function TeacherVoicePill({
       const courseLanguage =
         (typeof localStorage !== 'undefined' && localStorage.getItem('generationLanguage')) ||
         'zh-CN';
-      const previewText = courseLanguage === 'en-US' ? 'Welcome to AI Classroom' : '欢迎来到AI课堂';
+      const previewText =
+        courseLanguage === 'en-US' ? 'Welcome to AI Classroom'
+        : courseLanguage === 'ja-JP' ? 'AIクラスルームへようこそ'
+        : courseLanguage === 'ru-RU' ? 'Добро пожаловать в AI-класс'
+        : '欢迎来到AI课堂';
 
       if (providerId === 'browser-native-tts') {
         const { promise, cancel } = playBrowserTTSPreview({ text: previewText, voice: voiceId });
